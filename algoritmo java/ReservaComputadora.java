@@ -1,16 +1,28 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ReservaComputadora {
     // Definimos las aulas y las computadoras disponibles
-    private static Map<String, List<String>> aulas = new HashMap<>();
+    private static Map<String, List<String>> aulas = new TreeMap<>();
     private static Map<String, Map<String, String>> reservas = new HashMap<>();
 
     public static void main(String[] args) {
+        // Map<String, java.util.List<String>> aulas = new TreeMap<>();
         // Inicializamos las aulas con las computadoras disponibles
-        aulas.put("Aula 1", Arrays.asList("Compu 1", "Compu 2", "Compu 3"));
-        aulas.put("Aula 2", Arrays.asList("Compu 1", "Compu 2"));
+        aulas.put("Aula 1 ", Arrays.asList("Compu 1", "Compu 2", "Compu 3", "Compu 4", "Compu 5", "Compu 6", "Compu 7", "Compu 8"));
+        aulas.put("Aula 2 ", Arrays.asList("Compu 1", "Compu 2", "Compu 3", "Compu 4", "Compu 5", "Compu 6", "Compu 7", "Compu 8"));
+        aulas.put("Aula 3 ", Arrays.asList("Compu 1", "Compu 2", "Compu 3", "Compu 4", "Compu 5", "Compu 6", "Compu 7", "Compu 8"));
+        aulas.put("Aula 4 ", Arrays.asList("Compu 1", "Compu 2", "Compu 3", "Compu 4", "Compu 5", "Compu 6", "Compu 7", "Compu 8"));
+        aulas.put("Aula 5 ", Arrays.asList("Compu 1", "Compu 2", "Compu 3", "Compu 4", "Compu 5", "Compu 6", "Compu 7", "Compu 8"));
+       
 
         Scanner scanner = new Scanner(System.in);
+        
 
         // Escoger aula
         System.out.println("Seleccione un aula:");
@@ -49,7 +61,7 @@ public class ReservaComputadora {
                     reservas.put(nombreAula, new HashMap<>());
                 }
                 reservas.get(nombreAula).put(nombreComputadora, fecha + " " + hora);
-                System.out.println("Reserva confirmada para " + nombreComputadora + " en " + nombreAula + " el " + fecha + " a las " + hora);
+                System.out.println("Reserva confirmada para " + nombreComputadora + " en la " + nombreAula + " el " + fecha + " a las " + hora);
             } else {
                 System.out.println("Reserva cancelada.");
             }
